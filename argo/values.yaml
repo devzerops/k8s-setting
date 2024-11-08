@@ -1,0 +1,22 @@
+server:
+  service:
+    type: LoadBalancer
+    loadBalancerClass: io.cilium/l2-announcer
+    sessionAffinity: None
+    labels:
+      color: blue
+
+redis-ha:
+  enabled: true
+
+controller:
+  replicas: 1
+
+server:
+  replicas: 2
+
+repoServer:
+  replicas: 2
+
+applicationSet:
+  replicas: 2
